@@ -1,8 +1,8 @@
 import PySimpleGUI as sg
 from funcoes import *
 
-sg.theme('GrayGrayGray')   # Add a touch of color
-# All the stuff inside your janela.
+sg.theme('GrayGrayGray')
+
 layout = [  [sg.Text('Altura (em metros)'), sg.InputText(key="altura")],
             [sg.Text('Peso (em Kg)       '), sg.InputText(key="peso")],
             [sg.Text('Idade                   '), sg.InputText(key="idade")],
@@ -13,12 +13,12 @@ layout = [  [sg.Text('Altura (em metros)'), sg.InputText(key="altura")],
             [sg.Button('Calcular'), sg.Button('Cancelar')],
         ]
 
-# Create the janela
+
 janela = sg.Window('Calculadora IMC', layout)
-# Event Loop to process "events" and get the "values" of the inputs
+
 while True:
     event, values = janela.read()
-    if event == sg.WIN_CLOSED or event == 'Cancelar': # if user closes janela or clicks cancel
+    if event == sg.WIN_CLOSED or event == 'Cancelar':
         break
     if event == 'Calcular':
         try:
